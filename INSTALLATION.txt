@@ -1,0 +1,2 @@
+You do NOT need to have the Unity Editor in order to play this game. Simply download the zip file to your PC, extract it,
+and run the Unity file that is inside. That's all!
