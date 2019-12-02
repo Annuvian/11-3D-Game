@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Point")
         {
             Destroy(collision.gameObject);
+            ball.velocity = new Vector3(0, 0, 0);
             counter++;
             ball.position = position[counter];
         }
