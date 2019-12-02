@@ -124,5 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 8017823235783384163}
   camera: {fileID: 0}
-  power: 0.01
-  mouseYLast: 0
+  powerUI: {fileID: 0}
+  strokesUI: {fileID: 0}
+  power: 0.05
+  strokes: 0
+  counter: 0
