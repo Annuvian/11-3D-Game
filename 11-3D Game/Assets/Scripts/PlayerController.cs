@@ -7,10 +7,19 @@ public class PlayerController : MonoBehaviour
     public Rigidbody ball;
     public Transform camera;
     public float power = 0;
+    public int strokes = 0;
+    public int counter = 0;
+    private Vector3[] position = new[] {
+        new Vector3(-4.657f, 0.051f, -4.44f), // hole 1
+        new Vector3(-3.837f, 0.051f, -4.558f), // hole 2
+        new Vector3(-0.676f, 0.051f, -4.566f) // hole 3
+    };
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        ball.position = position[0];
     }
 
     // Update is called once per frame
@@ -63,8 +72,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Putt()
+    private void Putt()
     {
+        strokes++;
         ball.AddForce(transform.forward * power, ForceMode.Impulse);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Point")
+        {
+            Destroy(collision.gameObject);
+            counter++;
+            ball.position = position[counter];
+        }
     }
 }
